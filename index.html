@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Index</title>
+</head>
+<body>
+    <header>
+        <img src="/static/logo.png" alt="Logo">
+        <h1>Welcome to Our Web App</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/message">Send a Message</a></li>
+        </ul>
+    </nav>
+    <main>
+        <p>This is the main page of our web application. Use the navigation menu to explore the app.</p>
+    </main>
+    <footer>
+        <p>&copy; 2024 Web App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+<!-- message.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Send a Message</title>
+</head>
+<body>
+    <header>
+        <img src="/static/logo.png" alt="Logo">
+        <h1>Send a Message</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/message">Send a Message</a></li>
+        </ul>
+    </nav>
+    <main>
+        <form action="/message" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+        {% if status %}
+        <p>{{ status }}</p>
+        {% endif %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Web App. All rights reserved.</p>
+    </footer>
+</body>
+</html>
